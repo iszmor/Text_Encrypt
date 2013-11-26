@@ -4,11 +4,10 @@
 package text_encrypt01;
 
 public class Text_Encrypt01 {
-
-    static MainFrame mainf;
+    
+    private static MainFrame frame;
     
     public static void main(String[] args) {
-        //Create main windows
-        MainFrame frame = new MainFrame();
+        frame = new MainFrame();
     }
 }

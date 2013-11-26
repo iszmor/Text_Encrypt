@@ -1,49 +1,35 @@
 package text_encrypt01;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
-public class MainFrame extends JFrame {
+public class MainFrame {
 
     //Initial width and height
-    private int WINDOW_WIDTH = 800;
-    private int WINDOW_HEIGHT = 600;
+    private final int WINDOW_WIDTH = 800;
+    private final int WINDOW_HEIGHT = 600;
     //Windows title
-    private String title = "asdf";
-    private Container contentpane;
+    private final String title = "asdf";
+    
+    //Other fields
+    private final JFrame frame;
+    private final Container contentpane;
 
     public MainFrame() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-        setTitle(title);
-        contentpane = getContentPane();
+        frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        frame.setTitle(title);
+        //Set contentpane
+        contentpane = frame.getContentPane();
         //Set layout
-        setLayout(new GridBagLayout());
-        //Adding components to the frame
-        menubar();
-        mainPanel();
-        //Set the frame to visible
-        setVisible(true);
-    }
-
-    private void menubar() {
-        //Create menu bar
-        JMenuBar menubar = new JMenuBar();
+        frame.setLayout(new GridBagLayout());
+        //Get menubar from MenuBar class
+        MenuBar menubar = new MenuBar();
         //Set it to the frame
-        setJMenuBar(menubar);
-        //Adding items to the menu bar
-        JMenu menu = new JMenu("Menu");
-        menubar.add(menu);
-        //Adding items to "menu"
-        JMenuItem exitItem = new JMenuItem("Exit");
-        menu.add(exitItem);
-        exitItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                System.exit(0);
-            }
-        });
+        frame.setJMenuBar(menubar.returnMenuBar());
+        //Set the frame to visible
+        frame.setVisible(true);
     }
 
     //TODO: Move to MainPanel class

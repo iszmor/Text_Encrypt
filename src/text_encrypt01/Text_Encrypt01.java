@@ -6,7 +6,9 @@ package text_encrypt01;
 public class Text_Encrypt01 {
 
     public static void main(String[] args) {
+        /*
         //Create main windows
         MainFrame frame = new MainFrame();
+                /*
     }
 }

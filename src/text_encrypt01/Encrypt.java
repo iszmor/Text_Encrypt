@@ -5,8 +5,12 @@ public class Encrypt {
     private String word;
     private String password;
     
-    public Encrypt(String word, String password){
+    public Encrypt(String w, String pw){
         //encryption algorithm
+        for (int i = 0; i < pw.length(); i++){
+            System.out.println("char = " + pw.charAt(i));
+        }
+        
     }
     
     public String returnWord(){

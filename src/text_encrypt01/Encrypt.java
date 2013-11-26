@@ -8,7 +8,7 @@ public class Encrypt {
     public Encrypt(String w, String pw){
         //encryption algorithm
         for (int i = 0; i < pw.length(); i++){
-            System.out.println("char = " + pw.charAt(i));
+            System.out.println("char = " + pw.codePointAt(i));
         }
         
     }

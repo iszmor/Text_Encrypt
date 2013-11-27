@@ -10,8 +10,12 @@ public class EncryptDemo {
         String word = kb.nextLine();
         System.out.println("password");
         String password = kb.nextLine();
-        Encrypt a = new Encrypt(word, password);
-
-        //System.out.println("encrypted word is = " + a.returnWord());
+        
+        //Parse word and password to encrypt
+        Encrypt a = new Encrypt(word, password);        
+        //get encrypted word
+        String enc = a.returnWord();
+        System.out.println("Encrypted word is");
+        System.out.println(enc);
     }
 }

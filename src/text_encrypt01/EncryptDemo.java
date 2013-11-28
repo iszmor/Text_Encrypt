@@ -15,8 +15,8 @@ public class EncryptDemo {
         Encrypt a = new Encrypt();      
         a.EncryptText(word, password);
         //get encrypted word
-        String enc = a.returnText();
-        System.out.println("Encrypted word is");
-        System.out.println(enc);
+        //String enc = a.returnText();
+        //System.out.println("Encrypted word is");
+        //System.out.println(enc);
     }
 }

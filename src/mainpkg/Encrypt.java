@@ -22,7 +22,7 @@ public class Encrypt {
     }
     
 
-    private String word = "";
+    //private String word = "";
     //private int algo = 0;
 
     public void EncryptText(String w, String pw) {

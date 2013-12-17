@@ -1,3 +1,5 @@
+package mainpkg;
+
 //Move mainPanel to this class
 public class MainPanel {
 

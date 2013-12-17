@@ -1,3 +1,5 @@
+package mainpkg;
+
 //Author: Piyapong pongteekayu, Suthipong Thongjaroen
 
 //This is the main class

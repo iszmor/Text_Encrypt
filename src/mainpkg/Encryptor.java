@@ -1,3 +1,5 @@
+package mainpkg;
+
 //Piyapong Pongteekayu 212210026
 public class Encryptor {
     

@@ -1,3 +1,5 @@
+package mainpkg;
+
 import java.util.Scanner;
 
 public class DecryptDemo {

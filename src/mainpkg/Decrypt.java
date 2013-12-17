@@ -1,3 +1,5 @@
+package mainpkg;
+
 public class Decrypt {
 
     private String word = "";

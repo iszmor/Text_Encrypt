@@ -1,3 +1,5 @@
+package mainpkg;
+
 /*
  Usage : call EncryptText(word, password) to encrypt @word with @password
  then call returnText to get the encrypted text

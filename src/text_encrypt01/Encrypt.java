@@ -2,8 +2,9 @@ package text_encrypt01;
 
 public class Encrypt {
 
-    private String word = "";
-    private int algo = 0;
+    private String word;
+    private String password;
+    //private int algo = 0;
 
     public Encrypt() {
 //        //Test decrypt
@@ -15,6 +16,8 @@ public class Encrypt {
 //
 //        System.out.println("test is now scrambled and is now = " + test);
     }
+    
+
 
     public void EncryptText(String w, String pw) {
         /*

@@ -4,24 +4,19 @@ package mainpkg;
 public class Encryptor {
     
     //Variable Initialization
-    private String encryptedText; //To keep the encrypted text for the getEncrypted method
+    private String encryptedText = ""; //To keep the encrypted text for the getEncrypted method
     
     
     //Constructor
     public Encryptor(String p, String t)
     {
-        String password = p; //To keep password
-        String text = t; //To keep text
+        String password = p; //Accept password
+        String text = t; //Accept text
+
+        String passwordString = ""; //To store converted password
         
-        //Get length of the password
-        int passwordLength = password.length();
-        
-        //Get length of the text
-        int textLength = text.length();
-        
-        String passwordString = "";
-        
-        for (int i = 0; i < passwordLength; i++)
+        //Convert letters in the password to numbers
+        for (int i = 0; i < password.length(); i++)
         {
             if (Character.isLetter(password.charAt(i)))
             {
@@ -33,7 +28,36 @@ public class Encryptor {
             }
         }
         
-        System.out.print(passwordString);
+        //Check if the passwordString is long enough to use with the text
+        while (passwordString.length() < text.length())
+        {//If not long enough, repeat the passwordString until it is long enough
+            passwordString += passwordString;
+        }
+        
+        System.out.println(passwordString);
+        
+        int currentCharCode = 0;
+        int encryptedCharCode = 0;
+        char encryptedChar = 0;
+        for (int i = 0; i < text.length(); i++)
+        {
+            currentCharCode = text.codePointAt(i);
+            //System.out.println("code of char"+i+":"+currentCharCode);
+            encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
+            if (encryptedCharCode > 126)
+            {
+                encryptedCharCode = (encryptedCharCode - 126) + 33;
+                //System.out.println("encrypted char code more than 126");
+                encryptedChar = (char)encryptedCharCode;
+            }
+            else
+            {
+                encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
+                encryptedChar = (char)encryptedCharCode;
+            }
+            encryptedText += encryptedChar;
+        }
+        System.out.print(encryptedText);
     }
     
     //Get Encrypted text
@@ -45,6 +69,6 @@ public class Encryptor {
     //For test run
     public static void main(String[] args)
     {
-        new Encryptor("1234aasdfasdfasdfasf","asdfghjhlzxcvnzsdnbfaskjd");
+        new Encryptor("testpassword","~asdf~~~");
     }
 }

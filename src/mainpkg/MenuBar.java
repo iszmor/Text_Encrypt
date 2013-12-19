@@ -20,7 +20,7 @@ public class MenuBar extends JMenu {
         menubar.add(menu);
         menu.add(exitItem);
         
-        menubar.add(languages);
+        //menubar.add(languages);
         languages.add(en);
         languages.add(th);
         languages.add(jp);

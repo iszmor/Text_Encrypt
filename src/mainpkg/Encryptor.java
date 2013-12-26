@@ -21,14 +21,7 @@ public class Encryptor {
         //Convert letters in the password to numbers
         for (int i = 0; i < password.length(); i++)
         {
-            if (Character.isLetter(password.charAt(i)))
-            {
-                passwordString += password.codePointAt(i);
-            }
-            else
-            {
-                passwordString += password.charAt(i);
-            }
+            passwordString += password.codePointAt(i);
         }
         
         //Check if the passwordString is long enough to use with the text
@@ -37,7 +30,7 @@ public class Encryptor {
             passwordString += passwordString;
         }
         
-        //System.out.println(passwordString);
+        System.out.println(passwordString);
         
         int currentCharCode = 0;
         int encryptedCharCode = 0;
@@ -46,16 +39,7 @@ public class Encryptor {
         {
             currentCharCode = text.codePointAt(i);
             //System.out.println("code of char"+i+":"+currentCharCode);
-            try
-            {
-                encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
-            }
-            catch(NumberFormatException e)
-            {
-                JOptionPane.showMessageDialog(null, "Invalid Password Combination!\n"
-                        + "Available characters: a-Z A-Z 0-9");
-                System.exit(0);
-            }
+            encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
             if (encryptedCharCode > 126)
             {
                 encryptedCharCode = (encryptedCharCode - 126) + 32;
@@ -79,8 +63,8 @@ public class Encryptor {
     }
     
     //For test run
-    /*public static void main(String[] args)
+    public static void main(String[] args)
     {
-        new Encryptor("test","this is a text");
-    }*/
+        new Encryptor("!@#$","this is a text");
+    }
 }

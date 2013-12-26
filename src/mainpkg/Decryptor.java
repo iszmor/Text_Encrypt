@@ -21,14 +21,7 @@ public class Decryptor {
         //Convert letters in the password to numbers
         for (int i = 0; i < password.length(); i++)
         {
-            if (Character.isLetter(password.charAt(i)))
-            {
-                passwordString += password.codePointAt(i);
-            }
-            else
-            {
-                passwordString += password.charAt(i);
-            }
+            passwordString += password.codePointAt(i);
         }
         
         //Check if the passwordString is long enough to use with the text
@@ -46,16 +39,7 @@ public class Decryptor {
         {
             currentCharCode = text.codePointAt(i);
             //System.out.println("code of char"+i+":"+currentCharCode);
-            try
-            {
-                decryptedCharCode = currentCharCode - Integer.parseInt(Character.toString(passwordString.charAt(i)));
-            }
-            catch(NumberFormatException e)
-            {
-                JOptionPane.showMessageDialog(null, "Invalid Password Combination!\n"
-                        + "Available characters: a-Z A-Z 0-9");
-                System.exit(0);
-            }
+            decryptedCharCode = currentCharCode - Integer.parseInt(Character.toString(passwordString.charAt(i)));
             if (decryptedCharCode < 32)
             {
                 decryptedCharCode = (decryptedCharCode + 126) - 32;
@@ -79,8 +63,8 @@ public class Decryptor {
     }
     
     //For test run
-    /*public static void main(String[] args)
+    public static void main(String[] args)
     {
-        new Decryptor("test","uiot jt!f!ukyu");
-    }*/
+        new Decryptor("!@#$","wkow#nv&d#zi{y");
+    }
 }

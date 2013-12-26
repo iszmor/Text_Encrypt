@@ -33,7 +33,7 @@ public class MenuBar extends JMenu {
             }
         });
         
-        //Locale switcher
+        //Locale switcher, needs to call setText() to every class with text that needs to be localized
         en.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -54,16 +54,32 @@ public class MenuBar extends JMenu {
             }
         });
         
+        jp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MainFrame.in.switchLocale("ja", "JP");
+                setText();
+                MainFrame.setText();
+                MainPanel.setText();
+            }
+        });
+       
+        //Init text
         setText();
     }
     
     public JMenuBar returnMenuBar(){
         return menubar;
     }    
-    
+        
     //Call this method when init/changing locale
     private void setText(){
         menu.setText(MainFrame.in.messages.getString("menu"));
+        exitItem.setText(MainFrame.in.messages.getString("exit"));
+        languages.setText(MainFrame.in.messages.getString("languages"));
+        en.setText(MainFrame.in.messages.getString("english"));
+        th.setText(MainFrame.in.messages.getString("thai"));
+        jp.setText(MainFrame.in.messages.getString("japanese"));
     }
     
 }

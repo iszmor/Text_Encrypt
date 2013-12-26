@@ -3,7 +3,7 @@ package mainpkg;
 import java.awt.*;
 import javax.swing.*;
 
-public final class MainFrame {
+public class MainFrame {
 
     //Initial windows width and height
     private final int WINDOW_WIDTH = 800;
@@ -21,7 +21,7 @@ public final class MainFrame {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-        //Set contentpane
+        //Get contentpane from frame
         contentpane = frame.getContentPane();
         //Set layout
         frame.setLayout(new GridBagLayout());
@@ -39,10 +39,12 @@ public final class MainFrame {
         
         //Init text
         setText();
+        
     }
 
-    //Call this method when init/changing locale
+    //Call this method when init/changing locale, public 
     public static void setText() {
+        //Title of the frame
         frame.setTitle(in.messages.getString("windowtitle"));
     }   
 

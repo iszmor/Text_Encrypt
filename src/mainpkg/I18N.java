@@ -1,3 +1,8 @@
+/*
+ * Internalization class
+ * deals with internationalizing the software
+ * switchLocale() is used to change locale on the fly
+*/
 package mainpkg;
 
 import java.util.Locale;
@@ -39,11 +44,11 @@ public final class I18N {
         //System.out.println(currentLocale); 
     }
     
-    public Locale returnLocale(){
-        return currentLocale;
-    }
+//    public Locale returnLocale(){
+//        return currentLocale;
+//    }
     
-    public ResourceBundle returnBundle(){
-        return messages;
-    }
+//    public ResourceBundle returnBundle(){
+//        return messages;
+//    }
 }

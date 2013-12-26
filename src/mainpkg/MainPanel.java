@@ -12,7 +12,7 @@ public class MainPanel {
     private final JPanel mainPane;
     
     //Temp label
-    private static final JLabel insname_la = new JLabel();
+    private static final JLabel insname_la = new JLabel("temp");    
 
     public MainPanel() {        
         //Sets up the panel

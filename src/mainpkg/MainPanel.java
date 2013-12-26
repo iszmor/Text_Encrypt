@@ -7,9 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainPanel {
-    private JPanel mainPane;
+    
+    //The panel
+    private final JPanel mainPane;
+    
+    //Temp label
+    private static final JLabel insname_la = new JLabel();
 
-    public MainPanel() {
+    public MainPanel() {        
+        //Sets up the panel
         mainPane = new JPanel();
         mainPane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -21,7 +27,7 @@ public class MainPanel {
         c.weightx = 1.00;
         c.weighty = 1.00;
 
-        JLabel insname_la = new JLabel("mainPanel");
+        //Sets up the tmp label
         Font labelfontdef = insname_la.getFont();
         insname_la.setFont(new Font(labelfontdef.getName(), labelfontdef.getStyle(), 20));
         c.gridx = 0;
@@ -33,10 +39,17 @@ public class MainPanel {
         c.weighty = 0.00;
 //        c.insets = new Insets(0,10,0,0);
         mainPane.add(insname_la, c);
+        
+        //Init text
+        setText();
     }
     
     public JPanel returnPanel(){
         return mainPane;
     }
 
+    //Call this method when init/changing locale
+    public static void setText(){
+        insname_la.setText(MainFrame.in.messages.getString("greetings"));
+    }
 }

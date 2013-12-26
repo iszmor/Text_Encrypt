@@ -1,28 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package mainpkg;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-/**
- *
- * @author suthipong.th
- */
-public class I18N {
+public final class I18N {
     
     Locale currentLocale;
     ResourceBundle messages;
-    
-    public I18N(String[] args){
-        
-        String language;
-        String country;
-        
+    String language = "en";
+    String country = "US";
+
+    //Constructor with input for locale
+    public I18N(String[] args){        
         if (args.length != 2) {
             language = "en";
             country = "US";
@@ -33,6 +22,21 @@ public class I18N {
         
         currentLocale = new Locale(language, country);        
         messages = ResourceBundle.getBundle("mainpkg.MessagesBundle", currentLocale);
+    }
+    
+    //Normal constructor with default locale of en_US
+    public I18N(){
+        switchLocale(language, country);
+    }
+    
+    //Call this method when changing locale
+    public void switchLocale(String la, String co){
+        language = la;
+        country = co;
+        currentLocale = new Locale(language, country);        
+        messages = ResourceBundle.getBundle("mainpkg.MessagesBundle", currentLocale);
+        
+        //System.out.println(currentLocale); 
     }
     
     public Locale returnLocale(){

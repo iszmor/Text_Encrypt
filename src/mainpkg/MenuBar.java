@@ -18,9 +18,9 @@ public class MenuBar extends JMenu {
     public MenuBar(){
         //Adding menus to the menu bar
         menubar.add(menu);
-        menu.add(exitItem);
+        menu.add(exitItem);        
         
-        //menubar.add(languages);
+        menubar.add(languages);
         languages.add(en);
         languages.add(th);
         languages.add(jp);
@@ -32,10 +32,38 @@ public class MenuBar extends JMenu {
                 System.exit(0);
             }
         });
+        
+        //Locale switcher
+        en.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MainFrame.in.switchLocale("en", "US");
+                setText();
+                MainFrame.setText();
+                MainPanel.setText();
+            }
+        });        
+        
+        th.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MainFrame.in.switchLocale("th", "TH");
+                setText();
+                MainFrame.setText();
+                MainPanel.setText();
+            }
+        });
+        
+        setText();
     }
     
-        public JMenuBar returnMenuBar(){
+    public JMenuBar returnMenuBar(){
         return menubar;
+    }    
+    
+    //Call this method when init/changing locale
+    private void setText(){
+        menu.setText(MainFrame.in.messages.getString("menu"));
     }
     
 }

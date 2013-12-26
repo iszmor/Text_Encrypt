@@ -2,7 +2,7 @@ package mainpkg;
 
 import java.util.Scanner;
 
-public class DecryptDemo {
+public class Unused_DecryptDemo {
 
     public static void main(String[] args) {
         

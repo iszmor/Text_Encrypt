@@ -1,11 +1,11 @@
 package mainpkg;
 
-public class Decrypt {
+public class Unused_Decrypt {
 
     private String word = "";
     private int algo = 0;
 
-    public Decrypt() {
+    public Unused_Decrypt() {
     }
 
     public void DecryptText(String w, String pw) {

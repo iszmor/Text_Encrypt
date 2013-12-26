@@ -1,6 +1,9 @@
 package mainpkg;
 
 //Piyapong Pongteekayu 212210026
+
+import javax.swing.JOptionPane;
+
 public class Encryptor {
     
     //Variable Initialization
@@ -34,7 +37,7 @@ public class Encryptor {
             passwordString += passwordString;
         }
         
-        System.out.println(passwordString);
+        //System.out.println(passwordString);
         
         int currentCharCode = 0;
         int encryptedCharCode = 0;
@@ -43,10 +46,19 @@ public class Encryptor {
         {
             currentCharCode = text.codePointAt(i);
             //System.out.println("code of char"+i+":"+currentCharCode);
-            encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
+            try
+            {
+                encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
+            }
+            catch(NumberFormatException e)
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Password Combination!\n"
+                        + "Available characters: a-Z A-Z 0-9");
+                System.exit(0);
+            }
             if (encryptedCharCode > 126)
             {
-                encryptedCharCode = (encryptedCharCode - 126) + 33;
+                encryptedCharCode = (encryptedCharCode - 126) + 32;
                 //System.out.println("encrypted char code more than 126");
                 encryptedChar = (char)encryptedCharCode;
             }
@@ -67,8 +79,8 @@ public class Encryptor {
     }
     
     //For test run
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
-        new Encryptor("testpassword","~asdf~~~");
-    }
+        new Encryptor("test","this is a text");
+    }*/
 }

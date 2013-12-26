@@ -2,7 +2,7 @@ package mainpkg;
 
 import java.util.Scanner;
 
-public class EncryptDemo {
+public class Unused_EncryptDemo {
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class EncryptDemo {
         String password = kb.nextLine();
         
         //Parse word and password to encrypt
-        Encrypt a = new Encrypt();      
+        Unused_Encrypt a = new Unused_Encrypt();      
         a.EncryptText(word, password);
         //get encrypted word
         //String enc = a.returnText();

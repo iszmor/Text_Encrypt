@@ -4,13 +4,13 @@ package mainpkg;
  Usage : call EncryptText(word, password) to encrypt @word with @password
  then call returnText to get the encrypted text
  */
-public class Encrypt {
+public class Unused_Encrypt {
 
     private String word;
     private String password;
     //private int algo = 0;
 
-    public Encrypt() {
+    public Unused_Encrypt() {
 //        //Test decrypt
 //        String test = "";
 //        for (int i = 0; i < word.length(); i++) {

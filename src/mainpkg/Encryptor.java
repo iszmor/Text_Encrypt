@@ -2,8 +2,6 @@ package mainpkg;
 
 //Piyapong Pongteekayu 212210026
 
-import javax.swing.JOptionPane;
-
 public class Encryptor {
     
     //Variable Initialization

@@ -20,6 +20,7 @@ public class Encryptor {
         for (int i = 0; i < password.length(); i++)
         {
             passwordString += password.codePointAt(i);
+            //System.out.println("char:"+password.charAt(i)+" code:"+password.codePointAt(i));
         }
         
         //Check if the passwordString is long enough to use with the text
@@ -28,7 +29,7 @@ public class Encryptor {
             passwordString += passwordString;
         }
         
-        System.out.println(passwordString);
+        //System.out.println(passwordString);
         
         int currentCharCode = 0;
         int encryptedCharCode = 0;
@@ -36,7 +37,7 @@ public class Encryptor {
         for (int i = 0; i < text.length(); i++)
         {
             currentCharCode = text.codePointAt(i);
-            //System.out.println("code of char"+i+":"+currentCharCode);
+            //System.out.println("code of char:"+text.charAt(i)+":"+currentCharCode);
             encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
             if (encryptedCharCode > 126)
             {
@@ -48,10 +49,11 @@ public class Encryptor {
             {
                 encryptedCharCode = currentCharCode + Integer.parseInt(Character.toString(passwordString.charAt(i)));
                 encryptedChar = (char)encryptedCharCode;
+                //System.out.println(encryptedChar);
             }
             encryptedText += encryptedChar;
         }
-        System.out.print(encryptedText);
+        //System.out.print(encryptedText);
     }
     
     //Get Encrypted text
@@ -63,6 +65,6 @@ public class Encryptor {
     //For test run
     public static void main(String[] args)
     {
-        new Encryptor("!@#$","this is a text");
+        new Encryptor("1@Ab","this is a text~");
     }
 }

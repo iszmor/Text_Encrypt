@@ -51,7 +51,7 @@ public class Decryptor {
             }
             decryptedText += decryptedChar;
         }
-        System.out.print(decryptedText);
+        //System.out.print(decryptedText);
     }
     
     //Get Decrypted text
@@ -63,6 +63,6 @@ public class Decryptor {
     //For test run
     public static void main(String[] args)
     {
-        new Decryptor("!@#$","wkow#nv&d#zi{y");
+        new Decryptor("1@Ab","xqow&n|(e)zi~y)");
     }
 }
